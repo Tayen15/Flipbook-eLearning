@@ -286,7 +286,7 @@ export default function FlipbookPage() {
                )}
 
                {/* Controls */}
-               <div className="flex items-center justify-between w-full max-w-4xl mb-6">
+               <div className="flex items-center justify-between w-full max-w-4xl mb-6 text-slate-600">
                     <div className="flex items-center space-x-2">
                          <button
                               onClick={flipToPrev}
