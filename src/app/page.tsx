@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { PageFlip } from 'page-flip';
-import { flipbookData, FlipbookPage } from './data/flipbook-content';
+import { flipbookData, type FlipbookPage } from './data/flipbook-content';
 import { ChevronLeft, ChevronRight, Maximize, ExternalLink, FileText, Users, Target, Lightbulb, TestTube, CheckCircle } from 'lucide-react';
 
 // Page Components
