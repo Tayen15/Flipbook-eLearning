@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📚 UI/UX Digital Flipbook - Design Thinking Process Report
 
-## Getting Started
+## 🎯 Project Overview
 
-First, run the development server:
+Flipbook digital interaktif untuk laporan akhir UI/UX dengan efek dan animasi realistis menggunakan StPageFlip library. Dibuat dengan Next.js 15, TypeScript, dan Tailwind CSS.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+### 🔄 Interactive Flipbook Experience
+- **Realistic Page Flip Effects** - Menggunakan StPageFlip untuk animasi natural
+- **A4 Format** - Ukuran 420x594px (ratio A4) untuk kemudahan baca
+- **Touch & Mouse Support** - Responsif untuk desktop dan mobile
+- **Keyboard Navigation** - Arrow keys, spacebar, dan escape untuk kontrol
+
+### 🎨 Modern UI/UX Design
+- **Gradient Backgrounds** - Design modern dengan gradien yang menarik
+- **Glassmorphism Effects** - Backdrop blur dan transparansi
+- **Icon Integration** - Lucide React icons untuk visual yang konsisten
+- **Progress Tracking** - Real-time progress bar dan percentage
+- **Loading States** - Smooth loading experience
+
+### 📖 Content Structure
+Sesuai dengan standar laporan UI/UX Design Thinking Process (45 poin total):
+
+1. **Cover Page** - Halaman sampul dengan branding
+2. **Discover Phase (15 poin)**
+   - Profil objek penelitian
+   - Latar belakang masalah
+   - Empathy Map & hasil riset
+   - Persona & Journey Map
+3. **Define Phase (10 poin)**
+   - Problem Statement (How Might We)
+   - Diagram sebab akibat
+4. **Develop Phase (10 poin)**
+   - Brainstorming solusi
+   - Wireframe & Prototype
+   - Link Figma
+5. **Deliver Phase (10 poin)**
+   - Hasil user testing
+   - Feedback & iterasi
+   - Link Maze testing
+6. **Back Cover** - Penutup dan summary
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15.3.3 with Turbopack
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4
+- **Flipbook**: StPageFlip (page-flip) v2.0.7
+- **Icons**: Lucide React
+- **Animations**: CSS animations + Tailwind transitions
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── data/
+│   │   └── flipbook-content.ts    # Content constants & data
+│   ├── globals.css                # Global styles & animations
+│   ├── layout.tsx                 # Root layout
+│   └── page.tsx                   # Main flipbook component
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
+- Node.js 18+
+- npm or pnpm
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Installation
 
-## Learn More
+```bash
+# Install dependencies
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# Start development server
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Build for Production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Build application
+npm run build
 
-## Deploy on Vercel
+# Start production server
+npm start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎮 Controls & Navigation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Mouse/Touch
+- **Click & Drag** page corners to flip
+- **Click** navigation buttons (Previous/Next)
+- **Click** first page button to go to cover
+
+### Keyboard
+- **Arrow Left/Right** - Navigate pages
+- **Spacebar** - Next page
+- **Escape** - Exit fullscreen
+
+### Features
+- **Fullscreen Mode** - Maximize button
+- **Progress Tracking** - Visual progress bar
+- **Page Counter** - Current page / Total pages
+
+## 📊 Content Management
+
+Semua konten flipbook dikelola dalam file terstruktur di `src/app/data/flipbook-content.ts` dengan interface TypeScript untuk type safety dan kemudahan maintenance.
+
+## 🎨 Customization
+
+Mudah dikustomisasi melalui:
+- **Colors & Themes** - Edit gradient di flipbook-content.ts
+- **Page Dimensions** - Modify ukuran A4 di page.tsx
+- **Animation Timing** - Adjust di PageFlip config
+
+## 📱 Responsive Design
+
+- **Desktop First** - Optimized untuk A4 reading
+- **Mobile Friendly** - Touch gestures support
+- **Cross Browser** - Modern browser support
+
+---
+
+**Built with ❤️ for UI/UX Design Process Documentation**
