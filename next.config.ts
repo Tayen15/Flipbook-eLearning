@@ -1,27 +1,31 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-    },
-  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
+      // Handle PDF.js worker files
+      config.resolve.alias = {
+        ...config.resolve.alias,
         canvas: false,
-        encoding: false,
       };
     }
+
     return config;
   },
-  transpilePackages: ['page-flip'],
+  // Enable static file serving for worker files
+  async headers() {
+    return [
+      {
+        source: '/pdf.worker.min.mjs',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/javascript',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
