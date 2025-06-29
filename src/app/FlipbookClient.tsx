@@ -82,9 +82,35 @@ export default function FlipbookClient() {
           const initFlipbook = () => {
                if (!bookRef.current || pageImages.length === 0) return;
 
-               // A4 ratio optimized for PDF viewing
-               const width = 420;
-               const height = 594;
+               // A4 dimensions: 210mm x 297mm converted to pixels for web display
+               // A4 ratio is 210:297 = 1:1.414 (√2 ratio)
+               // Using 2.8x scale factor: 210mm * 2.8 ≈ 588px, 297mm * 2.8 ≈ 832px
+               // This provides better clarity while maintaining exact A4 proportions
+                  // Calculate dimensions based on screen size while maintaining A4 ratio (√2)
+                  const maxHeight = window.innerHeight * 0.7; // 70% of screen height
+                  const maxWidth = window.innerWidth * 0.8;   // 80% of screen width
+                  
+                  // A4 ratio is 1:√2 (approximately 1:1.414)
+                  const a4Ratio = 1.414;
+                  
+                  // Calculate optimal dimensions maintaining A4 ratio
+                  let width = maxHeight / a4Ratio;
+                  let height = maxHeight;
+                  
+                  // If width exceeds max width, scale down
+                  if (width > maxWidth) {
+                         width = maxWidth;
+                         height = maxWidth * a4Ratio;
+                  }
+                  
+                  // Ensure minimum readable size
+                  const minWidth = 400;
+                  const minHeight = minWidth * a4Ratio;
+                  
+                  if (width < minWidth) {
+                         width = minWidth;
+                         height = minHeight;
+                  }
 
                const pageFlip = new PageFlip(bookRef.current, {
                     width,
